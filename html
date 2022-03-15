@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            color: white;
+            background-color: aqua;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 15rem;
+            height: 15rem;
+
+            /* width: 100%; */
+        }
+
+        .container {
+            width: 80%;
+            /* margin: 5rem auto 0; */
+            padding: 2rem 0;
+            background-color: black;
+            height: 100vh;
+            margin: auto;
+
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            justify-items: center;
+            margin-top: 3rem;
+
+        }
+
+        @media screen and (max-width: 1200px) {
+
+            img {
+                width: 10rem;
+                height: 10rem;
+
+
+            }
+
+        }
+
+        @media screen and (max-width: 968px) {
+
+            img {
+                width: 10rem;
+                height: 10rem;
+
+
+            }
+
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                justify-items: center;
+                margin-top: 1rem;
+
+            }
+
+        }
+
+        @media screen and (max-width: 500px) {
+            .container {
+                width: 90%;
+            }
+
+            img {
+                width: 7rem;
+                height: 7rem;
+
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card--arr1 card"><img id="myImg0" src="./img/card.png" alt=""></div>
+            <div class="card--arr2 card"><img id="myImg1" src="./img/card.png" alt=""></div>
+            <div class="card--arr3 card"><img id="myImg2" src="./img/card.png" alt=""> </div>
+            <div class="card--arr4 card"><img id="myImg3" src="./img/card.png" alt=""></div>
+            <div class="card--arr5 card"><img id="myImg4" src="./img/card.png" alt=""></div>
+            <div class="card--arr6 card"><img id="myImg5" src="./img/card.png" alt=""></div>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script>
+
+    const arr1 = ["0.png", "1.png", "2.png", "3.png", "4.png", "5.png"];
+     arr1.sort(() => (Math.random() > .5) ? 1 : -1);
+    const arr2 = [];
+
+
+    const display1 = document.querySelector(`.card--arr1`);
+    const display2 = document.querySelector(`.card--arr2`);
+    const display3 = document.querySelector(`.card--arr3`);
+    const display4 = document.querySelector(`.card--arr4`);
+    const display5 = document.querySelector(`.card--arr5`);
+    const display6 = document.querySelector(`.card--arr6`);
+ 
+    const sou = document.getElementById("myImg0");
+    const sou2 = document.getElementById("myImg1");
+    const sou3 = document.getElementById("myImg2");
+    const sou4 = document.getElementById("myImg3");
+    const sou5 = document.getElementById("myImg4");
+    const sou6 = document.getElementById("myImg5");
+
+    display1.addEventListener("click", function () {
+        sou.src = `img/${arr1[0]}`
+        console.log(sou.src);
+        arr2.push(arr1[0])
+        console.log(arr2);
+        win();
+
+
+    })
+    display2.addEventListener("click", function () {
+        sou2.src = `img/${arr1[1]}`
+        console.log(sou2.src);
+        arr2.push(arr1[1])
+        console.log(arr2);
+        win();
+
+    })
+    display3.addEventListener("click", function () {
+        sou3.src = `img/${arr1[2]}`
+        console.log(sou3.src);
+        arr2.push(arr1[2])
+        console.log(arr2);
+        win();
+
+    })
+    display4.addEventListener("click", function () {
+        sou4.src = `img/${arr1[3]}`
+        console.log(sou4.src);
+        arr2.push(arr1[3])
+        console.log(arr2);
+        win();
+        setTimeout()
+    })
+    display5.addEventListener("click", function () {
+        sou5.src = `img/${arr1[4]}`
+        console.log(sou5.src);
+        arr2.push(arr1[4])
+        console.log(arr2);
+        win();
+
+    })
+    display6.addEventListener("click", function () {
+        sou6.src = `img/${arr1[5]}`
+        console.log(sou6.src);
+        arr2.push(arr1[5])
+        console.log(arr2);
+        win();
+
+    })
+
+
+    const win = function () {
+
+        if (arr2.includes("0.png") && arr2.includes("1.png")) {
+            alert("you win")
+            setTimeout()
+        } else if (arr2.includes("2.png") && arr2.includes("3.png")) {
+            alert("you win")
+            setTimeout()
+        } else if (arr2.includes("4.png") && arr2.includes("5.png")) {
+            alert("you win")
+            setTimeout()
+        } else if (arr2.length === 2) {
+            alert("you lose");
+            setTimeout()
+
+        }
+    }
+
+    setTimeout(() => document.location.reload(), 3000)
+
+
+</script>
+
+</html>
